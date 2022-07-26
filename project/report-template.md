@@ -27,11 +27,11 @@ I think that happend because the hour feature gives the trained models better in
 ![hour_feature_hist.png](img/hour_feature_hist.png)
 
 ## Hyper parameter tuning
-### How much better did your model preform after trying different hyper parameters?
-TODO: Add your explanation
+### How much better did your model perform after trying different hyper parameters?
+After performing hyperparameter optimization via a random search method using the data with the added hour feature, the model's training rmse increased from 30.137145 to 34.057244 for the best model. However, the model's test error decreased from 0.69969 to 0.45605. This gives an indication that the new model has a bit higher bias, but better variance as it had better generalization for the test data. I think this is because I focused on tree based models with boosting ensemble technique that performed best with the default settings mainly Gradient boosting, CATboost and XGboost during hpo, while before hpo autogluon would try alot more types of models so it might have been slightly overfitting the data.
 
 ### If you were given more time with this dataset, where do you think you would spend more time?
-TODO: Add your explanation
+I think I would spend more time in feature engineering and discovering new features, although hyperparameter tunning is very important to reach the best model, but according to the results, only adding the hour feature caused a great increase in performance while using the default settings for the models used by autogluon. So I would give more time to feature engineering first before hyperparameter optimization.
 
 ### Create a table with the models you ran, the hyperparameters modified, and the kaggle score.
 |    | model        | hpo1                                                                                                                                                                                            | hpo2                                                                                                                                                                                 | hpo3                                                                                                                                                     |   score |
@@ -53,4 +53,4 @@ TODO: Replace the image below with your own.
 ![model_test_score.png](img/model_test_score.png)
 
 ## Summary
-TODO: Add your explanation
+In summary, I think that project showed how important both feature engineering and hyper parameter optimization are to the machine learning workflow. I think its kind of an iterative process where we should alternate between extracting new features from the given data, applying eda then trying different models on the data with new features and so on till reaching a reasonable value for the validation and test errors.
